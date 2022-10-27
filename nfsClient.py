@@ -2,11 +2,18 @@ from pyNfsClient import (Portmap, Mount, NFSv3, MNT3_OK, NFS_PROGRAM, NFS_V3, NF
 import sys
 import os
 
+TIMEOUT=5
+
+# Generic implementation of client. 
+# Hoping to instantiate a Dendron  or NFS client and make it generic. 
+class FileClient():
+    def __init__(self):
+        return
+
 # The NfsClient class is a holder to call NFS calls.
 # See https://pypi.org/project/pyNfsClient/
 # Add pyNfsClient in your requirements.txt file when building Functions or containers
-TIMEOUT=5
-class NfsClient():
+class NfsClient(FileClient):
     def __init__(self,hostname='fssClient',uid=0,gid=0,gids=[]):
         self.uid=uid
         self.gid=gid
