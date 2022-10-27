@@ -4,6 +4,7 @@ import os
 
 # The NfsClient class is a holder to call NFS calls.
 # See https://pypi.org/project/pyNfsClient/
+# Add pyNfsClient in your requirements.txt file when building Functions or containers
 TIMEOUT=5
 class NfsClient():
     def __init__(self,hostname='fssClient',uid=0,gid=0,gids=[]):
